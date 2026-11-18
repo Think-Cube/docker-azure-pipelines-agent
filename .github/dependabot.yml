@@ -5,9 +5,10 @@ updates:
     schedule:
       interval: weekly
     ignore:
-      # Stay on the current Ubuntu LTS; move to the next LTS on purpose.
+      # Stay on the current Ubuntu LTS and only take its digest updates. Interim releases such
+      # as 24.10 look like minor updates but lose support after nine months; move to the next LTS on purpose.
       - dependency-name: ubuntu
-        update-types: ["version-update:semver-major"]
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
