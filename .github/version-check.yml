@@ -1,0 +1,8 @@
+# Versions Dependabot does not track; checked weekly by .github/workflows/version-check.yml.
+checks:
+  - name: Azure Pipelines agent
+    file: Dockerfile
+    pattern: 'ARG AGENT_VERSION=(\S+)'
+    source: github-release
+    repository: microsoft/azure-pipelines-agent
+    note: Update AGENT_VERSION and both AGENT_SHA256 checksums from the pipelines-agent rows of the release notes.
